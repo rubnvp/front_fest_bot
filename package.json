@@ -1,0 +1,31 @@
+{
+  "name": "front_fest_bot",
+  "version": "1.0.0",
+  "description": "bot for FrontFest event",
+  "main": "main.js",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.24.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubnvp/front_fest_bot.git"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "event",
+    "nodejs",
+    "js"
+  ],
+  "author": "FrontFest organizers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rubnvp/front_fest_bot/issues"
+  },
+  "homepage": "https://github.com/rubnvp/front_fest_bot#readme"
+}
