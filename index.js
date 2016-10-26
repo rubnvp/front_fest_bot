@@ -31,4 +31,4 @@ var server = http.createServer(function(request, response) {
 server.listen(process.env.PORT || 8080);
 setInterval(function() {
     http.get("http://front-fest-bot.herokuapp.com");
-}, 10 * 1000);
+}, 25 * 60 * 1000);
