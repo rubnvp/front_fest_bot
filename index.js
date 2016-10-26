@@ -23,3 +23,9 @@ bot.onText(/\/cat/, function (msg) {
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+var http = require('http')
+var server = http.createServer(function(request, response) {
+  response.end("Hi there! :)");
+});
+server.listen(process.env.PORT || 8080);
