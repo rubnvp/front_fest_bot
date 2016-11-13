@@ -8,7 +8,7 @@ if (TELEGRAM_TOKEN === undefined) {
 }
 
 // Setup polling way
-var bot = new TelegramBot(config.token, {polling: true});
+var bot = new TelegramBot(TELEGRAM_TOKEN, {polling: true});
 
 // Matches /echo [whatever]
 bot.onText(/\/start/, function (msg) {
