@@ -7,7 +7,7 @@ var bot = new TelegramBot(config.token, {polling: true});
 // Matches /echo [whatever]
 bot.onText(/\/start/, function (msg) {
   var fromId = msg.from.id
-  bot.sendMessage(fromId, "Hola, soy el bot del frontFest! Estaré encantada de responder tus preguntas sobre el evento");
+  bot.sendMessage(fromId, "Hola, soy el bot del frontFest! Estaré encantado de responder tus preguntas sobre el evento");
 });
 
 // Matches /echo [whatever]
