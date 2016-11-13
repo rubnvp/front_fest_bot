@@ -1,5 +1,11 @@
 var TelegramBot = require('node-telegram-bot-api');
-var config = require('./config.json');
+var http = require('http');
+
+var TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
+if (TELEGRAM_TOKEN === undefined) {
+  console.error("Undefined TELEGRAM_TOKEN enviroment variable");
+  process.exit();
+}
 
 // Setup polling way
 var bot = new TelegramBot(config.token, {polling: true});
@@ -39,4 +45,10 @@ bot.onText(/\/ubicacion/, function (msg) {
   address = 'Calle Moreno Nieto, 2, 28005 Madrid, Spain';
   bot.sendVenue(chatId, latitude, longitude, title, address);
   bot.sendMessage(chatId, 'Se accede por la entrada del auditorio');
- });
+});
+
+// server to keep alive on heroku
+var server = http.createServer(function(request, response) {
+  response.end("Hi there! :)");
+});
+server.listen(process.env.PORT || 8080);
