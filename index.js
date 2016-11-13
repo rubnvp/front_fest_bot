@@ -9,7 +9,13 @@ if (TELEGRAM_TOKEN === undefined) {
 // Setup polling way
 var bot = new TelegramBot(TELEGRAM_TOKEN, {polling: true});
 
-// Matches /echo [whatever]
+/* Commands spanish descriptions:
+start - presenta al bot.
+location - muestra la localización del evento.
+cat - manda una foto de un gatito.
+*/
+
+// Start message
 bot.onText(/^\/start$/, function (msg) {
   var fromId = msg.from.id;
   bot.sendMessage(fromId, "Hola, soy el bot del frontFest! Estaré encantado de responder tus preguntas sobre el evento.");
@@ -23,7 +29,7 @@ bot.onText(/^\/location$/, function (msg) {
   title = 'frontFest (Google Campus)';
   address = 'Calle Moreno Nieto, 2, 28005 Madrid, Spain';
   bot.sendVenue(chatId, latitude, longitude, title, address);
-  bot.sendMessage(chatId, 'Se accede por la entrada del auditorio.');
+  bot.sendMessage(chatId, '(se accede por la entrada del auditorio)');
 });
 
 // Matches /cat
